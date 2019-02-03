@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
+    <ProjectReference Include="..\Application.Northwind.DataAccess\Application.Northwind.DataAccess.csproj" />
+    <ProjectReference Include="..\Application.Northwind.Entities\Application.Northwind.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Application.Northwind.Entities.Concrete;
+﻿using Application.Northwind.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Northwind.DataAccess.Concrete.EntityFramework
