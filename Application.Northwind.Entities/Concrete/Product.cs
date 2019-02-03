@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Application.Core.Entities;
 
 namespace Application.Northwind.Entities.Concrete
 {
-    public class Product
+    public class Product:IEntity
     {
         public int ProductId  { get; set; }
         public string ProductName { get; set; }
