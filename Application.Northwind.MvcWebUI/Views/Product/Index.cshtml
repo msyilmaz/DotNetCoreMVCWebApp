@@ -1,5 +1,7 @@
-﻿@model object
-
+﻿@model Application.Northwind.MvcWebUI.Models.ProductListViewModel
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +10,24 @@
 </head>
 <body>
 <div>
-    <p>test</p>
+    <table>
+        <tr>
+            <td>ProductName</td>
+            <td>Category Id</td>
+            <td>Unit Price</td>
+            <td>Units In Stock</td>
+        </tr>
+        @foreach(var product in Model.ProductlList)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.CategoryId</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.UnitsInStock</td>
+            </tr>
+        }
+    </table>
+
 </div>
 </body>
 </html>

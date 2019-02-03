@@ -7,7 +7,7 @@ namespace Application.Northwind.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind; Trusted_Connection = true");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-3TOPB11;Initial Catalog=Northwind;Integrated Security=True;Trusted_Connection = true");
         }
 
         public DbSet<Product> Products{ get; set; }
