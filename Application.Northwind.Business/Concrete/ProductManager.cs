@@ -24,6 +24,11 @@ namespace Application.Northwind.Business.Concrete
             _productDal.Delete(product);
         }
 
+        public Product GetById(int productId)
+        {
+            return _productDal.Get(p => p.ProductId == productId);
+        }
+
         public List<Product> GetAll()
         {
             return _productDal.GetList(null);

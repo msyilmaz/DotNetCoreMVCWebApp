@@ -3,6 +3,7 @@ using Application.Northwind.Business.Concrete;
 using Application.Northwind.DataAccess.Abstract;
 using Application.Northwind.DataAccess.Concrete.EntityFramework;
 using Application.Northwind.MvcWebUI.MiddleWare;
+using Application.Northwind.MvcWebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,11 @@ namespace Application.Northwind.MvcWebUI
             services.AddScoped<IProductDal, EfProductDal>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddSingleton<ICartSessionService, CartSessionService>();
+            services.AddSingleton<ICartService, CartService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession();
+            services.AddDistributedMemoryCache();
             services.AddMvc();
         }
 
@@ -32,7 +38,8 @@ namespace Application.Northwind.MvcWebUI
             }
 
             app.UseFileServer();
-            app.UseNodeModules(env.ContentRootPath); 
+            app.UseNodeModules(env.ContentRootPath);
+            app.UseSession();
 
             app.UseMvcWithDefaultRoute();
         }
